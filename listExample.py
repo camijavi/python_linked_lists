@@ -35,7 +35,7 @@ class LinkedList:
             temporalVariable = self.head.next
 
             while temporalVariable != None:
-                if new.name.lower()> temp.name.lowr():
+                if new.name.lower()> temporal.name.lower():
                     previous = temporalVariable
                     temporalVariable = temporalVariable.next
                 else:
@@ -75,3 +75,4 @@ class LinkedList:
                 else:
                     previous = temporalVariable
                     temporalVariable = temporalVariable.next
+        return None

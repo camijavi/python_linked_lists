@@ -1,16 +1,20 @@
-from listExample import Contact, LinkedList
+from listExample import Contact, Linkedlist
 
 def main():
-    list = LinkedList()
+    lista = Linkedlista()
     c = Contact("85458745", "Julissa Parrales", "Claro", 3)
-    list.insert(c)
+    lista.insert(c)
     c = Contact("69784521", "Julio Aragón", "Tigo", 4) 
-    list.insert(c)
+    lista.insert(c)
     c = Contact("85458745", "Julissa Parrales", "Claro", 3)
-    list.insert(c)
+    lista.insert(c)
     c = Contact("78548569","Paulo Andino", "Claro", 5)
-    list.insert(c)
+    lista.insert(c)
 
-    list.print()
+    lista.print()
+    lista.print("*"*20)
+    lista.remove("Julissa Parrales")
+    lista.print()
+
 
 main()
