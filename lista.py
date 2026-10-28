@@ -44,3 +44,12 @@ class LinkedList:
             previous.next = new
             return True
         return False
+
+    def print(self):
+        if self.head == None:
+            print("Lista vacía...")
+        else:
+            temporalVariable = self.head
+            while temporalVariable != None:
+                temporalVariable.print()
+                temporalVariable = temporalVariable.next
