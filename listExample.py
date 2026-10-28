@@ -53,3 +53,25 @@ class LinkedList:
             while temporalVariable != None:
                 temporalVariable.print()
                 temporalVariable = temporalVariable.next
+
+    def remove (self, name: str)-> Contact:
+        contact = None
+        if self.head == None:
+            return contact
+        
+        if name.lower() == self.head.lower():
+            prefix =self.head
+            contact = Contact(prefix.phoneNumber, prefix.name, prefix.network, prefix.rank)
+            self.head = self.head.next
+            return contact
+        
+        if name.lower() > self.head.name.lower():
+            previous = self.head
+
+            temporalVariable = self.head.next
+            while temporalVariable != None:
+                if name.lower() == temporalVariable.name.lower():
+                    previous.next = temporalVariable.next
+                else:
+                    previous = temporalVariable
+                    temporalVariable = temporalVariable.next
