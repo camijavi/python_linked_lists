@@ -28,3 +28,19 @@ class LinkedList:
             new.next = self.head 
             self.head = new
             return True 
+
+        # new node > or new last 
+        if new.name.lower() > self.head.name.lower():
+            previous = self.head
+            temporalVariable = self.head.next
+
+            while temporalVariable != None:
+                if new.name.lower()> temp.name.lowr():
+                    previous = temporalVariable
+                    temporalVariable = temporalVariable.next
+                else:
+                    previous.next = new
+                    new.next = temporalVariable
+            previous.next = new
+            return True
+        return False
