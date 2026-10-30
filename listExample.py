@@ -7,7 +7,7 @@ class Contact:
         self.next = None # It's neccesary since it's a linked list
 
     def print(self):
-        print(f"{self.name} | [{self.phoneNumber}:{self.network}-{sefl.rank}]")
+        print(f"{self.name} | [{self.phoneNumber}:{self.network}-{self.rank}]")
 
 
 class LinkedList:
@@ -35,12 +35,13 @@ class LinkedList:
             temporalVariable = self.head.next
 
             while temporalVariable != None:
-                if new.name.lower()> temporal.name.lower():
+                if new.name.lower()> temporalVariable.name.lower():
                     previous = temporalVariable
                     temporalVariable = temporalVariable.next
                 else:
                     previous.next = new
                     new.next = temporalVariable
+                    return True
             previous.next = new
             return True
         return False
@@ -59,7 +60,7 @@ class LinkedList:
         if self.head == None:
             return contact
         
-        if name.lower() == self.head.lower():
+        if name.lower() == self.head.name.lower():
             prefix =self.head
             contact = Contact(prefix.phoneNumber, prefix.name, prefix.network, prefix.rank)
             self.head = self.head.next
@@ -72,6 +73,12 @@ class LinkedList:
             while temporalVariable != None:
                 if name.lower() == temporalVariable.name.lower():
                     previous.next = temporalVariable.next
+                    return Contact(
+                        temporalVariable.phoneNumber,
+                        temporalVariable.name,
+                        temporalVariable.network,
+                        temporalVariable.rank,
+                    )
                 else:
                     previous = temporalVariable
                     temporalVariable = temporalVariable.next
