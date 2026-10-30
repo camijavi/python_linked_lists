@@ -60,12 +60,14 @@ class LinkedList:
         if self.head == None:
             return contact
         
+        # Remove and return the first contact when its name matches.
         if name.lower() == self.head.name.lower():
             prefix =self.head
             contact = Contact(prefix.phoneNumber, prefix.name, prefix.network, prefix.rank)
             self.head = self.head.next
             return contact
         
+        # Search the remaining nodes and remove the contact with the matching name.
         if name.lower() > self.head.name.lower():
             previous = self.head
 
